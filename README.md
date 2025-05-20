@@ -7,55 +7,77 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+# 📝 Task Management App – Laravel
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+A simple and clean Laravel-based task management application. It allows users to create, edit, delete, and reorder tasks using drag-and-drop, with all data saved in a MySQL database. Tasks can also be associated with projects, and users can filter tasks by project using a dropdown menu.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## 🚀 Features
 
-## Learning Laravel
+- ✅ Create a new task (with name, optional project)
+- ✅ Edit and delete tasks
+- ✅ Tasks stored in MySQL with auto-managed priority
+- ✅ Drag-and-drop to reorder tasks in the UI
+- ✅ Reordering updates priority values dynamically
+- ✅ Filter tasks by associated project
+- ✅ Built using Laravel’s MVC structure
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+## 🧰 Tech Stack
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Laravel 12.x
+- PHP 8.2
+- MySQL 5.7+/8+
+- Blade Templates
+- Bootstrap 5 (UI Styling)
+- jQuery + jQuery UI (for drag-and-drop)
+- XAMPP (Recommended for local development)
 
-## Laravel Sponsors
+---
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+## 🛠️ Setup Instructions
 
-### Premium Partners
+### 1. Clone the Repository
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+```bash
+1. git clone https://github.com/srujan-27/Task_Management_Laravel.git
+cd Task_Management_Laravel
 
-## Contributing
+2. Install PHP Dependencies
+Make sure Composer is installed.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+composer install
 
-## Code of Conduct
+3. Setup the Environment
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+cp .env.example .env
+php artisan key:generate
 
-## Security Vulnerabilities
+4. configure MySQL in .env
+Update the .env file with your database info:
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=taskmanager
+DB_USERNAME=root
+DB_PASSWORD=
+you need to make sure the database "taskmanager" is already created in phpMyAdmin or MySQL Workbench. can create easily one by visiting localhost/phpmyadmin after starting the server in xampp.
 
-## License
+5. Run Migrations
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+php artisan migrate
+
+6.  Start the Laravel Server
+
+php artisan serve
+Visit the app at:
+
+http://127.0.0.1:8000
+
+Author
+Sai Srujan Vemula
+Portfolio:https://portfolio-srujan27s-projects.vercel.app/
+GitHub:https://github.com/srujan-27
